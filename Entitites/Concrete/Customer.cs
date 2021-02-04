@@ -7,10 +7,10 @@ namespace Entitites.Concrete
 {
    public class Customer: IEntity
     {
-        public int CustomerId { get; set; }
-        public int ContactName { get; set; }
-        public int CompanyName { get; set; }
-        public int City { get; set; }
+        public string CustomerId { get; set; }
+        public string ContactName { get; set; }
+        public string CompanyName { get; set; }
+        public string City { get; set; }
 
     }
 }

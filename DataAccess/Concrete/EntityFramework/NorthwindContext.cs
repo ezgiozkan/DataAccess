@@ -15,8 +15,7 @@ namespace DataAccess.Concrete.EntityFramework
             //Normal projelerde Ip verilir
             //optionsBuilder.UseSqlServer(@"Server = 175.45.2.12");
 
-            optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection = true");
-
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Northwind;Trusted_Connection=true");
         }
 
         public DbSet<Product> Products { get; set; }

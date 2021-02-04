@@ -8,7 +8,7 @@ namespace DataAccess.Abstract
     {
 
         //ürünleri kategoriye göre listele vs işlemlerini yapabilmek için (filtreleme işlemi)
-        List<T> GetAll(Expression<Func<T, bool>> filter = null);
+        List<T> GetAll(Expression<Func<T, bool>> filter=null);
         T Get(Expression<Func<T,bool>> filter );
 
         void Add(T entity);

@@ -33,26 +33,27 @@ namespace DataAccess.Concrete.InMemory
 
         public void Delete (Product product)
         {
-            Product productToDelete;
-            productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
+            Product productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
+
             _products.Remove(productToDelete);
+        }
+        public List<Product> GetAll()
+        {
+            return _products;
         }
 
 
         public void Update (Product product)
         {
+            //Gönderdiğim ürün id'sine sahip olan listedeki ürünü bul
             Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             productToUpdate.ProductName = product.ProductName;
-            productToUpdate.ProductId = product.ProductId;
+            productToUpdate.CategoryId = product.CategoryId;
             productToUpdate.UnitPrice = product.UnitPrice;
             productToUpdate.UnitsInStock = product.UnitsInStock;
 
         }
-        public List <Product>GetAll()
-        {
-            return _products;
-        }
-
+       
         public List<Product> GetAllByCategory (int categoryId)
         {
             return _products.Where(p => p.CategoryId == categoryId).ToList();

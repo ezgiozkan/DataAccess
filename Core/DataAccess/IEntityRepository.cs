@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
-    public interface IEntityRepository<T>
+    public interface IEntityRepository<T> where T:class,IEntity,new()
     {
 
         //ürünleri kategoriye göre listele vs işlemlerini yapabilmek için (filtreleme işlemi)
